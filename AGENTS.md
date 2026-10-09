@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Project rules
+- Bookings table is service-role only (RLS, no policies); all reads/writes go through server functions in src/lib/*.functions.ts — keeps client contact data private.
+- Admin panel uses a shared password (ADMIN_PASSWORD secret) + encrypted session cookie, not user accounts — single owner, simple access.
+- Slot rules live in src/lib/slots.ts (pure, tested); Mendoza is fixed UTC-3.
