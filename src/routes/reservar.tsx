@@ -53,8 +53,8 @@ function Reservar() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!dateKey || !time) return toast.error("Elegí un día y un horario.");
-    if (!tema) return toast.error("Elegí el tema principal.");
+    if (!dateKey || !time) { toast.error("Elegí un día y un horario."); return; }
+    if (!tema) { toast.error("Elegí el tema principal."); return; }
     const f = new FormData(e.currentTarget);
     setSending(true);
     try {
