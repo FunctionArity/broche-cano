@@ -5,6 +5,7 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { CalendarCheck2, Clock, Loader2, MapPin, Video } from "lucide-react";
 import { Calendar } from "@/components/ui/calendar";
+import { es } from "react-day-picker/locale";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -117,6 +118,7 @@ function Reservar() {
                   <h2 className="mb-3 px-2 text-xl">1. Elegí el día</h2>
                   <Calendar
                     mode="single"
+                    locale={es}
                     selected={day}
                     onSelect={(d) => { setDay(d); setTime(null); }}
                     disabled={(d) => toKey(d) < todayKey || d.getDay() === 0 || d.getDay() === 6}
