@@ -10,7 +10,13 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { SiteFooter, SiteHeader } from "@/components/site";
 import { createBooking, getAvailableSlots } from "@/lib/bookings.functions";
 import { formatSlot, mendozaToday } from "@/lib/slots";
@@ -18,7 +24,8 @@ import { cn } from "@/lib/utils";
 import { absoluteUrl } from "@/lib/seo";
 
 const TITLE = "Reservá tu reunión 1 a 1 · Cano Natalia Soluciones Contables";
-const DESCRIPTION = "Elegí día y horario para tu reunión de 45 minutos, virtual o presencial en Mendoza.";
+const DESCRIPTION =
+  "Elegí día y horario para tu reunión de 45 minutos, virtual o presencial en Mendoza.";
 
 export const Route = createFileRoute("/reservar")({
   head: () => ({
@@ -62,8 +69,14 @@ function Reservar() {
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    if (!dateKey || !time) { toast.error("Elegí un día y un horario."); return; }
-    if (!tema) { toast.error("Elegí el tema principal."); return; }
+    if (!dateKey || !time) {
+      toast.error("Elegí un día y un horario.");
+      return;
+    }
+    if (!tema) {
+      toast.error("Elegí el tema principal.");
+      return;
+    }
     const f = new FormData(e.currentTarget);
     setSending(true);
     try {
@@ -105,21 +118,34 @@ function Reservar() {
             <div className="mx-auto max-w-xl rounded-3xl bg-card p-8 text-center shadow-soft md:p-12">
               <CalendarCheck2 className="mx-auto h-12 w-12 text-accent" />
               <h1 className="mt-5 text-4xl text-primary-deep">¡Reserva recibida!</h1>
-              <p className="mt-3 text-muted-foreground">Te voy a escribir para confirmar la reunión.</p>
+              <p className="mt-3 text-muted-foreground">
+                Te voy a escribir para confirmar la reunión.
+              </p>
               <div className="mt-8 space-y-3 rounded-2xl bg-secondary p-5 text-left">
-                <p className="flex items-center gap-3 font-medium capitalize"><Clock className="h-5 w-5 text-primary" /> {formatSlot(done.slot_start)} hs</p>
+                <p className="flex items-center gap-3 font-medium capitalize">
+                  <Clock className="h-5 w-5 text-primary" /> {formatSlot(done.slot_start)} hs
+                </p>
                 <p className="flex items-center gap-3">
-                  {done.modalidad === "virtual" ? <Video className="h-5 w-5 text-primary" /> : <MapPin className="h-5 w-5 text-primary" />}
-                  {done.modalidad === "virtual" ? "Virtual · Google Meet" : "Presencial · Mendoza"} · 45 minutos
+                  {done.modalidad === "virtual" ? (
+                    <Video className="h-5 w-5 text-primary" />
+                  ) : (
+                    <MapPin className="h-5 w-5 text-primary" />
+                  )}
+                  {done.modalidad === "virtual" ? "Virtual · Google Meet" : "Presencial · Mendoza"}{" "}
+                  · 45 minutos
                 </p>
               </div>
-              <Button asChild variant="outline" className="mt-8 rounded-full"><Link to="/">Volver al inicio</Link></Button>
+              <Button asChild variant="outline" className="mt-8 rounded-full">
+                <Link to="/">Volver al inicio</Link>
+              </Button>
             </div>
           ) : (
             <>
               <p className="eyebrow">Reunión 1 a 1 · 45 min</p>
               <h1 className="mt-4 text-4xl text-primary-deep md:text-5xl">Reservá tu reunión</h1>
-              <p className="mt-3 text-muted-foreground">Horarios de Mendoza. Lunes a viernes, 9 a 13 y 16 a 19 hs.</p>
+              <p className="mt-3 text-muted-foreground">
+                Horarios de Mendoza. Lunes a viernes, 9 a 13 y 16 a 19 hs.
+              </p>
 
               <form onSubmit={onSubmit} className="mt-10 grid gap-6 lg:grid-cols-[auto_1fr]">
                 <section className="rounded-3xl bg-card p-5 shadow-soft">
@@ -128,16 +154,23 @@ function Reservar() {
                     mode="single"
                     locale={es}
                     selected={day}
-                    onSelect={(d) => { setDay(d); setTime(null); }}
+                    onSelect={(d) => {
+                      setDay(d);
+                      setTime(null);
+                    }}
                     disabled={(d) => toKey(d) < todayKey || d.getDay() === 0 || d.getDay() === 6}
                     className="mx-auto"
                   />
                   <h2 className="mb-3 mt-5 px-2 text-xl">2. Elegí el horario</h2>
                   <div className="px-2">
                     {!day && <p className="text-sm text-muted-foreground">Primero elegí un día.</p>}
-                    {day && slots.isLoading && <Loader2 className="h-5 w-5 animate-spin text-primary" />}
+                    {day && slots.isLoading && (
+                      <Loader2 className="h-5 w-5 animate-spin text-primary" />
+                    )}
                     {day && slots.data && slots.data.length === 0 && (
-                      <p className="text-sm text-muted-foreground">No quedan horarios este día. Probá con otro.</p>
+                      <p className="text-sm text-muted-foreground">
+                        No quedan horarios este día. Probá con otro.
+                      </p>
                     )}
                     <div className="grid grid-cols-3 gap-2">
                       {slots.data?.map((s) => (
@@ -147,7 +180,9 @@ function Reservar() {
                           onClick={() => setTime(s)}
                           className={cn(
                             "rounded-xl border py-2 text-sm font-medium transition-colors",
-                            time === s ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary",
+                            time === s
+                              ? "border-primary bg-primary text-primary-foreground"
+                              : "border-border hover:border-primary",
                           )}
                         >
                           {s}
@@ -162,13 +197,22 @@ function Reservar() {
                   <div className="mt-6 grid gap-5 sm:grid-cols-2">
                     <Field label="Nombre y apellido *" name="nombre" required maxLength={100} />
                     <Field label="Email *" name="email" type="email" required maxLength={255} />
-                    <Field label="WhatsApp *" name="whatsapp" type="tel" required maxLength={30} placeholder="261 000 0000" />
+                    <Field
+                      label="WhatsApp *"
+                      name="whatsapp"
+                      type="tel"
+                      required
+                      maxLength={30}
+                      placeholder="+54 9 261 417 6485"
+                    />
                     <Field label="Empresa / emprendimiento" name="empresa" maxLength={120} />
                     <Field label="Rubro" name="rubro" maxLength={120} />
                     <div className="space-y-2">
                       <Label>Tema principal *</Label>
                       <Select value={tema} onValueChange={setTema}>
-                        <SelectTrigger className="h-11"><SelectValue placeholder="Elegí un tema" /></SelectTrigger>
+                        <SelectTrigger className="h-11">
+                          <SelectValue placeholder="Elegí un tema" />
+                        </SelectTrigger>
                         <SelectContent>
                           <SelectItem value="impuestos">Impuestos</SelectItem>
                           <SelectItem value="laboral">Laboral</SelectItem>
@@ -181,14 +225,21 @@ function Reservar() {
                     <div className="space-y-2 sm:col-span-2">
                       <Label>Modalidad *</Label>
                       <div className="grid grid-cols-2 gap-3">
-                        {([["virtual", "Virtual · Meet", Video], ["presencial", "Presencial · Mendoza", MapPin]] as const).map(([v, l, I]) => (
+                        {(
+                          [
+                            ["virtual", "Virtual · Meet", Video],
+                            ["presencial", "Presencial · Mendoza", MapPin],
+                          ] as const
+                        ).map(([v, l, I]) => (
                           <button
                             type="button"
                             key={v}
                             onClick={() => setModalidad(v)}
                             className={cn(
                               "flex items-center justify-center gap-2 rounded-xl border p-3 text-sm font-medium",
-                              modalidad === v ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-primary",
+                              modalidad === v
+                                ? "border-primary bg-primary text-primary-foreground"
+                                : "border-border hover:border-primary",
                             )}
                           >
                             <I className="h-4 w-4" /> {l}
@@ -198,12 +249,20 @@ function Reservar() {
                     </div>
                     <div className="space-y-2 sm:col-span-2">
                       <Label htmlFor="mensaje">Mensaje breve</Label>
-                      <Textarea id="mensaje" name="mensaje" maxLength={1000} rows={4} placeholder="Contame en pocas líneas qué querés resolver." />
+                      <Textarea
+                        id="mensaje"
+                        name="mensaje"
+                        maxLength={1000}
+                        rows={4}
+                        placeholder="Contame en pocas líneas qué querés resolver."
+                      />
                     </div>
                   </div>
                   <div className="mt-8 flex flex-col gap-3 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
                     <p className="text-sm text-muted-foreground capitalize">
-                      {dateKey && time ? `${formatSlot(new Date(`${dateKey}T${time}:00-03:00`).toISOString())} hs` : "Sin horario elegido"}
+                      {dateKey && time
+                        ? `${formatSlot(new Date(`${dateKey}T${time}:00-03:00`).toISOString())} hs`
+                        : "Sin horario elegido"}
                     </p>
                     <Button type="submit" variant="hero" size="xl" disabled={sending}>
                       {sending && <Loader2 className="h-4 w-4 animate-spin" />} Confirmar reserva
@@ -220,7 +279,11 @@ function Reservar() {
   );
 }
 
-function Field({ label, name, ...rest }: { label: string; name: string } & React.InputHTMLAttributes<HTMLInputElement>) {
+function Field({
+  label,
+  name,
+  ...rest
+}: { label: string; name: string } & React.InputHTMLAttributes<HTMLInputElement>) {
   return (
     <div className="space-y-2">
       <Label htmlFor={name}>{label}</Label>

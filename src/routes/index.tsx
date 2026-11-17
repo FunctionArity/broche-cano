@@ -108,7 +108,7 @@ const faqs = [
 function Index() {
   const businessJsonLd = buildAccountingServiceJsonLd({
     imageUrl: OG_IMAGE,
-    telephone: "+5492610000000",
+    telephone: "+5492614176485",
     email: EMAIL,
     sameAs: [INSTAGRAM],
   });
