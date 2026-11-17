@@ -111,7 +111,7 @@ function Index() {
           <div>
             <p className="eyebrow">Contadora Pública Nacional · Mendoza</p>
             <h1 className="mt-5 text-5xl leading-[1.05] text-primary-deep md:text-7xl">
-              [Tu nombre]
+              Cano Natalia
             </h1>
             <p className="mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">
               Te ayudo a <em className="font-serif text-foreground">ordenar tus números</em> y a
