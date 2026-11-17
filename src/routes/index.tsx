@@ -8,7 +8,7 @@ import estudio from "@/assets/estudio.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "[Tu nombre] · Contadora Pública en Mendoza | Broche-Cano" },
+      { title: "[Tu nombre] · Contadora Pública en Mendoza | Cano Natalia" },
       { name: "description", content: "Ayudo a PyMEs y emprendedores de Mendoza a ordenar sus números y acceder a financiamiento productivo. Reservá tu reunión 1 a 1." },
       { property: "og:title", content: "[Tu nombre] · Contadora Pública en Mendoza" },
       { property: "og:description", content: "Asesoría impositiva, laboral, contable y financiamiento productivo para PyMEs. Reservá tu reunión 1 a 1." },

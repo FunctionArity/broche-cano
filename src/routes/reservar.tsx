@@ -19,9 +19,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/reservar")({
   head: () => ({
     meta: [
-      { title: "Reservá tu reunión 1 a 1 · Broche-Cano Soluciones Contables" },
+      { title: "Reservá tu reunión 1 a 1 · Cano Natalia Soluciones Contables" },
       { name: "description", content: "Elegí día y horario para tu reunión de 45 minutos, virtual o presencial en Mendoza." },
-      { property: "og:title", content: "Reservá tu reunión 1 a 1 · Broche-Cano" },
+      { property: "og:title", content: "Reservá tu reunión 1 a 1 · Cano Natalia" },
       { property: "og:description", content: "Agenda online: elegí día y horario para tu reunión de 45 minutos con tu contadora." },
     ],
   }),

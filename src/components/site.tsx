@@ -11,7 +11,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/85 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5">
         <Link to="/" className="leading-tight">
-          <span className="block font-serif text-lg font-semibold text-primary">Broche-Cano</span>
+          <span className="block font-serif text-lg font-semibold text-primary">Cano Natalia</span>
           <span className="block text-[11px] tracking-[0.16em] uppercase text-muted-foreground">Soluciones Contables</span>
         </Link>
         <nav className="hidden items-center gap-7 text-sm md:flex">
@@ -33,7 +33,7 @@ export function SiteFooter() {
     <footer className="bg-primary-deep text-primary-foreground">
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 md:grid-cols-3">
         <div>
-          <p className="font-serif text-2xl">Broche-Cano</p>
+          <p className="font-serif text-2xl">Cano Natalia</p>
           <p className="mt-1 text-sm opacity-75">Soluciones Contables · Mendoza, Argentina</p>
         </div>
         <ul className="space-y-3 text-sm">
@@ -46,7 +46,7 @@ export function SiteFooter() {
         </div>
       </div>
       <p className="border-t border-primary-foreground/10 py-5 text-center text-xs opacity-60">
-        © {new Date().getFullYear()} Broche-Cano – Soluciones Contables
+        © {new Date().getFullYear()} Cano Natalia – Soluciones Contables
       </p>
     </footer>
   );

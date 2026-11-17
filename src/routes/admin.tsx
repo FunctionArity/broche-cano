@@ -14,9 +14,9 @@ export const Route = createFileRoute("/admin")({
   loader: () => adminListBookings(),
   head: () => ({
     meta: [
-      { title: "Panel de reservas · Broche-Cano" },
+      { title: "Panel de reservas · Cano Natalia" },
       { name: "description", content: "Panel privado de reservas." },
-      { property: "og:title", content: "Panel de reservas · Broche-Cano" },
+      { property: "og:title", content: "Panel de reservas · Cano Natalia" },
       { property: "og:description", content: "Panel privado de reservas." },
       { name: "robots", content: "noindex" },
     ],

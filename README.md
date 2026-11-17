@@ -1,6 +1,6 @@
-# Broche Cano
+# Cano Natalia
 
-Build a personal-brand website (in Spanish, Argentina — use "vos") for a Contadora Pública Nacional based in Mendoza, Argentina, whose studio is "Broche-Cano – Soluciones Contables" (Instagram: @broche.cano.contable). The main goal of the site is to let visitors book a 1-to-1 meeting with her.
+Build a personal-brand website (in Spanish, Argentina — use "vos") for a Contadora Pública Nacional based in Mendoza, Argentina, whose studio is "Cano Natalia – Soluciones Contables" (Instagram: @broche.cano.contable). The main goal of the site is to let visitors book a 1-to-1 meeting with her.
 
 About her (use for copy):
 - Independent practice since 2022 advising PyMEs and entrepreneurs on tax, labor and accounting matters.
