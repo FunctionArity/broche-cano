@@ -22,25 +22,30 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { SiteFooter, SiteHeader } from "@/components/site";
+import { EMAIL, INSTAGRAM, SiteFooter, SiteHeader, WHATSAPP } from "@/components/site";
 import estudio from "@/assets/estudio.jpg";
+import { absoluteUrl, buildAccountingServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
+
+const TITLE = "Cano Natalia · Contadora Pública en Mendoza";
+const DESCRIPTION =
+  "Ayudo a PyMEs y emprendedores de Mendoza a ordenar sus números y acceder a financiamiento productivo. Reservá tu reunión 1 a 1.";
+const OG_IMAGE = absoluteUrl(estudio);
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Cano Natalia · Contadora Pública en Mendoza | Cano Natalia" },
-      {
-        name: "description",
-        content:
-          "Ayudo a PyMEs y emprendedores de Mendoza a ordenar sus números y acceder a financiamiento productivo. Reservá tu reunión 1 a 1.",
-      },
-      { property: "og:title", content: "[Tu nombre] · Contadora Pública en Mendoza" },
-      {
-        property: "og:description",
-        content:
-          "Asesoría impositiva, laboral, contable y financiamiento productivo para PyMEs. Reservá tu reunión 1 a 1.",
-      },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:url", content: absoluteUrl("/") },
+      { property: "og:image", content: OG_IMAGE },
+      { property: "og:image:alt", content: "Escritorio del estudio con vista a los Andes" },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
+    links: [{ rel: "canonical", href: absoluteUrl("/") }],
   }),
   component: Index,
 });
@@ -101,8 +106,24 @@ const faqs = [
 ];
 
 function Index() {
+  const businessJsonLd = buildAccountingServiceJsonLd({
+    imageUrl: OG_IMAGE,
+    telephone: "+5492610000000",
+    email: EMAIL,
+    sameAs: [INSTAGRAM],
+  });
+  const faqJsonLd = buildFaqJsonLd({ faqs });
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <SiteHeader />
 
       {/* Hero */}

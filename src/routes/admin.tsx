@@ -18,7 +18,7 @@ export const Route = createFileRoute("/admin")({
       { name: "description", content: "Panel privado de reservas." },
       { property: "og:title", content: "Panel de reservas · Cano Natalia" },
       { property: "og:description", content: "Panel privado de reservas." },
-      { name: "robots", content: "noindex" },
+      { name: "robots", content: "noindex, nofollow" },
     ],
   }),
   component: Admin,

@@ -12,6 +12,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE_LOCALE, SITE_NAME } from "../lib/seo";
 
 function NotFoundComponent() {
   return (
@@ -78,9 +79,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Cano Natalia · Soluciones Contables" },
+      { title: SITE_NAME },
       { name: "description", content: "Contadora Pública Nacional en Mendoza. Asesoría impositiva, laboral, contable y financiamiento productivo para PyMEs." },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: SITE_NAME },
+      { property: "og:locale", content: SITE_LOCALE },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -102,7 +105,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
       </head>

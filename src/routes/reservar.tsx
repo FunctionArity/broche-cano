@@ -15,15 +15,23 @@ import { SiteFooter, SiteHeader } from "@/components/site";
 import { createBooking, getAvailableSlots } from "@/lib/bookings.functions";
 import { formatSlot, mendozaToday } from "@/lib/slots";
 import { cn } from "@/lib/utils";
+import { absoluteUrl } from "@/lib/seo";
+
+const TITLE = "Reservá tu reunión 1 a 1 · Cano Natalia Soluciones Contables";
+const DESCRIPTION = "Elegí día y horario para tu reunión de 45 minutos, virtual o presencial en Mendoza.";
 
 export const Route = createFileRoute("/reservar")({
   head: () => ({
     meta: [
-      { title: "Reservá tu reunión 1 a 1 · Cano Natalia Soluciones Contables" },
-      { name: "description", content: "Elegí día y horario para tu reunión de 45 minutos, virtual o presencial en Mendoza." },
-      { property: "og:title", content: "Reservá tu reunión 1 a 1 · Cano Natalia" },
-      { property: "og:description", content: "Agenda online: elegí día y horario para tu reunión de 45 minutos con tu contadora." },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESCRIPTION },
+      { property: "og:url", content: absoluteUrl("/reservar") },
+      { name: "twitter:title", content: TITLE },
+      { name: "twitter:description", content: DESCRIPTION },
     ],
+    links: [{ rel: "canonical", href: absoluteUrl("/reservar") }],
   }),
   component: Reservar,
 });
