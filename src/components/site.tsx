@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export const INSTAGRAM = "https://instagram.com/broche.cano.contable";
 export const WHATSAPP = "https://wa.me/5492614176485"; // placeholder
-export const EMAIL = "info@canonatalia.com.ar"; // placeholder
+export const EMAIL = "info@canonatalia.com"; // placeholder
 
 export function SiteHeader() {
   return (
