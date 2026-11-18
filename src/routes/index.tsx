@@ -26,9 +26,9 @@ import { EMAIL, INSTAGRAM, SiteFooter, SiteHeader, WHATSAPP } from "@/components
 import estudio from "@/assets/estudio.jpg";
 import { absoluteUrl, buildAccountingServiceJsonLd, buildFaqJsonLd } from "@/lib/seo";
 
-const TITLE = "Cano Natalia · Contadora Pública en Mendoza";
+const TITLE = "Contadora Pública Nacional | Asesoramiento Contable – Cano Natalia";
 const DESCRIPTION =
-  "Ayudo a PyMEs y emprendedores de Mendoza a ordenar sus números y acceder a financiamiento productivo. Reservá tu reunión 1 a 1.";
+  "Asesoramiento de una Contadora Pública para PyMEs y emprendedores: impuestos, sueldos, contabilidad y financiamiento productivo. Reservá tu reunión 1 a 1.";
 const OG_IMAGE = absoluteUrl(estudio);
 
 export const Route = createFileRoute("/")({
@@ -40,7 +40,11 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: DESCRIPTION },
       { property: "og:url", content: absoluteUrl("/") },
       { property: "og:image", content: OG_IMAGE },
-      { property: "og:image:alt", content: "Escritorio del estudio con vista a los Andes" },
+      {
+        property: "og:image:alt",
+        content:
+          "Escritorio de un estudio contable en Mendoza, con vista a la cordillera de los Andes",
+      },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
       { name: "twitter:image", content: OG_IMAGE },
@@ -103,6 +107,10 @@ const faqs = [
     q: "¿Qué tengo que traer?",
     a: "Tu CUIT, la última declaración jurada o constancia de inscripción y, si querés hablar de financiamiento, una idea del monto y destino de la inversión. Si no tenés todo, no pasa nada: arrancamos igual.",
   },
+  {
+    q: "¿Dónde puedo conseguir asesoramiento de un contador público en Mendoza?",
+    a: "Acá mismo: soy Contadora Pública Nacional con sede en Mendoza y atiendo a PyMEs y emprendedores de toda la provincia, de forma virtual o presencial. Reservá tu reunión 1 a 1 y empezamos a ordenar tus números.",
+  },
 ];
 
 function Index() {
@@ -111,6 +119,7 @@ function Index() {
     telephone: "+5492614176485",
     email: EMAIL,
     sameAs: [INSTAGRAM],
+    knowsAbout: [...servicios.map((s) => s.t), "Asesoría en financiamiento productivo"],
   });
   const faqJsonLd = buildFaqJsonLd({ faqs });
 
@@ -163,7 +172,7 @@ function Index() {
           <div className="relative">
             <img
               src={estudio}
-              alt="Escritorio del estudio con vista a los Andes"
+              alt="Escritorio de un estudio contable en Mendoza, con vista a la cordillera de los Andes"
               width={1280}
               height={960}
               className="aspect-[4/5] w-full rounded-[2rem] object-cover shadow-soft md:aspect-[4/5]"

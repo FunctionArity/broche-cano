@@ -3,12 +3,14 @@
 Build a personal-brand website (in Spanish, Argentina — use "vos") for a Contadora Pública Nacional based in Mendoza, Argentina, whose studio is "Cano Natalia – Soluciones Contables" (Instagram: @broche.cano.contable). The main goal of the site is to let visitors book a 1-to-1 meeting with her.
 
 About her (use for copy):
+
 - Independent practice since 2022 advising PyMEs and entrepreneurs on tax, labor and accounting matters.
 - Holds a diplomado in tutoría de emprendedores.
 - Tango Elite (5-star) recognition from Tango Software, 2026.
 - New flagship service: asesoría en financiamiento productivo — helping PyMEs access credit lines from CFI, Mendoza Fiduciaria (e.g. Mendoza Produce) and Banco Nación. Three stages: (1) diagnóstico y encuadre, (2) preparación de la documentación, (3) acompañamiento hasta el desembolso.
 
 Pages / sections (single landing page is fine, plus a booking flow):
+
 1. Hero: name placeholder "[Tu nombre]", title "Contadora Pública Nacional · Mendoza", a one-line value proposition about helping PyMEs ordenar sus números y acceder a financiamiento, and a primary CTA "Reservá tu reunión 1 a 1".
 2. Sobre mí: short bio with photo placeholder and credentials (CPN, diplomado, Tango Elite).
 3. Servicios: cards for Asesoría impositiva, Asesoría laboral, Contabilidad para PyMEs, and a highlighted card for Financiamiento productivo explaining the 3 stages.
@@ -21,7 +23,7 @@ Design: professional, warm and trustworthy — not corporate-cold. Clean layout,
 
 This project was built with [Lovable](https://lovable.dev).
 
-**Live app**: https://broche-cano.lovable.app
+**Live app**: https://canonatalia.com
 
 ## Build with Lovable
 
