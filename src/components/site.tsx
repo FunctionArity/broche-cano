@@ -64,7 +64,7 @@ export function SiteFooter() {
               rel="noreferrer"
               className="inline-flex items-center gap-2 hover:opacity-80"
             >
-              <MessageCircle className="h-4 w-4" /> WhatsApp +54 9 261 000-0000
+              <MessageCircle className="h-4 w-4" /> WhatsApp +54 9 261 417 6485
             </a>
           </li>
           <li>
