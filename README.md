@@ -11,7 +11,7 @@ About her (use for copy):
 
 Pages / sections (single landing page is fine, plus a booking flow):
 
-1. Hero: name placeholder "[Tu nombre]", title "Contadora Pública Nacional · Mendoza", a one-line value proposition about helping PyMEs ordenar sus números y acceder a financiamiento, and a primary CTA "Reservá tu reunión 1 a 1".
+1. Hero: name placeholder Cano Natalia, title "Contadora Pública Nacional", ayudar PyMEs ordenar sus números y acceder a financiamiento, and a primary CTA "Reservá tu reunión 1 a 1".
 2. Sobre mí: short bio with photo placeholder and credentials (CPN, diplomado, Tango Elite).
 3. Servicios: cards for Asesoría impositiva, Asesoría laboral, Contabilidad para PyMEs, and a highlighted card for Financiamiento productivo explaining the 3 stages.
 4. Cómo funciona la reunión 1 a 1: 3 simple steps (elegí el día y horario → completá tus datos → recibí la confirmación). Options: virtual (Google Meet) or presencial en Mendoza, 45 minutes.
@@ -21,17 +21,7 @@ Pages / sections (single landing page is fine, plus a booking flow):
 
 Design: professional, warm and trustworthy — not corporate-cold. Clean layout, generous whitespace, an elegant serif for headings and a clean sans for body, a deep green or navy primary with a warm accent; fully responsive and mobile-first since most visitors will come from WhatsApp and Instagram.
 
-This project was built with [Lovable](https://lovable.dev).
-
 **Live app**: https://canonatalia.com
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/111fc6df-0c19-4499-b13d-5994319970d1).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
